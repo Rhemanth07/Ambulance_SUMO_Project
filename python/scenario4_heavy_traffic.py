@@ -2,11 +2,13 @@
 import os
 import traci
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-ROOT = r"C:\Ambulance_SUMO_Project"
-CONFIG = os.path.join(ROOT, "simulation", "ambulance.sumocfg")
-ROUTES = os.path.join(ROOT, "routes", "ambulance.rou.xml")
-TEMP_ROUTES = os.path.join(ROOT, "routes", "scenario4_temp.rou.xml")
+ROOT = Path(__file__).resolve().parent.parent
+
+CONFIG = str(ROOT / "simulation" / "ambulance.sumocfg")
+ROUTES = str(ROOT / "routes" / "ambulance.rou.xml")
+TEMP_ROUTES = str(ROOT / "routes" / "scenario4_temp.rou.xml")
 
 SIMULATION_END = 700
 

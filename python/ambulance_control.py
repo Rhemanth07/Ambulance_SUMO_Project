@@ -1,10 +1,13 @@
 
 import os
 import traci
+from pathlib import Path
 
-SUMO_HOME = r"C:\Program Files (x86)\Eclipse\Sumo"
+
+SUMO_HOME = os.environ.get("SUMO_HOME", r"C:\Program Files (x86)\Eclipse\Sumo")
 SUMO_GUI = os.path.join(SUMO_HOME, "bin", "sumo-gui.exe")
-CONFIG = r"C:\Ambulance_SUMO_Project\simulation\ambulance.sumocfg"
+CONFIG = str(Path(__file__).resolve().parent.parent / "simulation" / "ambulance.sumocfg")
+
 
 AMBULANCE_ID = "ambulance1"
 JUNCTIONS = ["J1", "J2", "J3"]

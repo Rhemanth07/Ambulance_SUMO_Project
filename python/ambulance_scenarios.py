@@ -1,14 +1,22 @@
 
 import os
 import sys
+from pathlib import Path
 import xml.etree.ElementTree as ET
 import traci
 
-SUMO_HOME = r"C:\Program Files (x86)\Eclipse\Sumo"
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+
+SUMO_HOME = os.environ.get(
+    "SUMO_HOME",
+    r"C:\Program Files (x86)\Eclipse\Sumo"
+)
+
 SUMO_GUI = os.path.join(SUMO_HOME, "bin", "sumo-gui.exe")
-CONFIG = r"C:\Ambulance_SUMO_Project\simulation\ambulance.sumocfg"
-ROUTE_FILE = r"C:\Ambulance_SUMO_Project\routes\ambulance.rou.xml"
-TEMP_ROUTE = r"C:\Ambulance_SUMO_Project\routes\scenario_temp.rou.xml"
+
+CONFIG = str(PROJECT_DIR / "simulation" / "ambulance.sumocfg")
+ROUTE_FILE = str(PROJECT_DIR / "routes" / "ambulance.rou.xml")
+TEMP_ROUTE = str(PROJECT_DIR / "routes" / "scenario_temp.rou.xml")
 
 JUNCTIONS = ["J1", "J2", "J3"]
 DETECTION_RANGE = 300.0

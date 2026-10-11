@@ -39,7 +39,7 @@
     <flow id="normalTraffic" type="car" route="mainRoute" begin="0" end="600" period="20" />
     <flow id="reverseTraffic" type="car" route="reverseRoute" begin="0" end="600" period="7" />
 
-    <flow id="ambulance_same" type="ambulance" route="mainRoute" begin="0" end="600" period="120" /><flow id="verticalTraffic1" type="car" route="verticalJ1Up" begin="5" end="600" period="12" />
+    <flow id="verticalTraffic1" type="car" route="verticalJ1Up" begin="5" end="600" period="12" />
     <flow id="verticalTraffic2" type="car" route="verticalJ1Down" begin="8" end="600" period="14" />
 
     <flow id="blueCars" type="carBlue" route="mainRoute" begin="10" end="600" period="17" />
