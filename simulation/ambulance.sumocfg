@@ -1,0 +1,11 @@
+
+<configuration>
+    <input>
+        <net-file value="../network/ambulance.net.xml"/>
+        <route-files value="../routes/ambulance.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="600"/>
+    </time>
+</configuration>

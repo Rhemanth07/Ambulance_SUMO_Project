@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes>
+    
+    <vType id="car" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="ambulance" accel="3.0" decel="5.0" sigma="0" length="5" maxSpeed="20" vClass="emergency" color="1,0,0" />
+
+    <vType id="carBlue" vClass="passenger" color="0,0,1" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carWhite" vClass="passenger" color="1,1,1" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carYellow" vClass="passenger" color="1,1,0" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carGreen" vClass="passenger" color="0,0.7,0" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+
+    <vType id="motorcycle" vClass="motorcycle" color="0,0,0" accel="3.0" decel="5.0" sigma="0" length="2.2" maxSpeed="12" />
+    <vType id="bus" vClass="bus" color="0,0.6,1" accel="1.2" decel="4.0" sigma="0" length="12" maxSpeed="11" />
+    <vType id="truck" vClass="truck" color="0.5,0.5,0.5" accel="1.3" decel="4.0" sigma="0" length="8" maxSpeed="10" />
+
+    
+    <route id="mainRoute" edges="E0 E1 E2 E9" />
+    <route id="reverseRoute" edges="-E9 -E2 -E1 -E0" />
+
+    <route id="verticalJ1Up" edges="-E3 E1 E2 E9" />
+    <route id="verticalJ1Down" edges="-E4 E1 E2 E9" />
+
+    <route id="verticalJ2Up" edges="-E5 E2 E9" />
+    <route id="verticalJ2Down" edges="-E6 E2 E9" />
+
+    <route id="verticalJ3Up" edges="-E7 E9" />
+    <route id="verticalJ3Down" edges="-E8 E9" />
+
+    <route id="j1StraightDown" edges="-E3 E4" />
+    <route id="j1StraightUp" edges="-E4 E3" />
+
+    <route id="j2StraightDown" edges="-E5 E6" />
+    <route id="j2StraightUp" edges="-E6 E5" />
+
+    <route id="j3StraightDown" edges="-E7 E8" />
+    <route id="j3StraightUp" edges="-E8 E7" />
+
+    
+    <flow id="normalTraffic" type="car" route="mainRoute" begin="0" end="600" period="20" />
+    <flow id="reverseTraffic" type="car" route="reverseRoute" begin="0" end="600" period="7" />
+
+    <flow id="ambulance_same" type="ambulance" route="mainRoute" begin="0" end="600" period="120" /><flow id="verticalTraffic1" type="car" route="verticalJ1Up" begin="5" end="600" period="12" />
+    <flow id="verticalTraffic2" type="car" route="verticalJ1Down" begin="8" end="600" period="14" />
+
+    <flow id="blueCars" type="carBlue" route="mainRoute" begin="10" end="600" period="17" />
+    <flow id="verticalTraffic3" type="car" route="verticalJ2Up" begin="10" end="600" period="12" />
+    <flow id="whiteCars" type="carWhite" route="mainRoute" begin="12" end="600" period="23" />
+    <flow id="verticalTraffic4" type="car" route="verticalJ2Down" begin="12" end="600" period="14" />
+
+    <flow id="yellowCars" type="carYellow" route="reverseRoute" begin="15" end="600" period="19" />
+    <flow id="j1VerticalDown" type="car" route="j1StraightDown" begin="15" end="600" period="12" />
+    <flow id="greenCars" type="carGreen" route="reverseRoute" begin="18" end="600" period="25" />
+    <flow id="j1VerticalUp" type="car" route="j1StraightUp" begin="20" end="600" period="14" />
+
+    <flow id="motorcycles" type="motorcycle" route="mainRoute" begin="20" end="600" period="30" />
+    <flow id="j2VerticalDown" type="car" route="j2StraightDown" begin="25" end="600" period="12" />
+    <flow id="buses" type="bus" route="reverseRoute" begin="25" end="600" period="65" />
+    <flow id="j2VerticalUp" type="car" route="j2StraightUp" begin="30" end="600" period="14" />
+
+    <flow id="trucks" type="truck" route="mainRoute" begin="30" end="600" period="55" />
+    <flow id="j3VerticalDown" type="car" route="j3StraightDown" begin="35" end="600" period="12" />
+    <flow id="j3VerticalUp" type="car" route="j3StraightUp" begin="40" end="600" period="14" />
+
+</routes>

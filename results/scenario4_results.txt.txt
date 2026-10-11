@@ -1,0 +1,26 @@
+**Scenario 4: Heavy Traffic Simulation Results**
+
+**Project:** SUMO-Integrated Edge-IoT Based Adaptive Multi-Junction Traffic Signal Preemption for Emergency Ambulance
+
+**Simulation tool:** SUMO 1.27.1 with Python and TraCI
+
+**Scenario setup:**
+- Background traffic flows in forward and reverse directions.
+- Traffic generation period: 2 seconds per direction.
+- Two ambulances were simulated.
+- Forward ambulance departure time: 10 seconds.
+- Reverse ambulance departure time: 70 seconds.
+
+**Observed results:**
+
+| Parameter | Forward ambulance | Reverse ambulance |
+|---|---:|---:|
+| Departure time | 10 s | 70 s |
+| Arrival time | 104 s | 195 s |
+| Travel time | 94 s | 125 s |
+
+**Additional observation:** The simulation contained up to 165 vehicles at the observed 181-second timestamp.
+
+**Conclusion:** Both ambulances completed their routes under simulated heavy-traffic conditions. A separate simulation without ambulance signal preemption is required to calculate the travel-time reduction achieved by the proposed system.
+
+**Note:** These are prototype simulation results, not real-road performance measurements.

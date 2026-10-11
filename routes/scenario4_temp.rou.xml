@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes>
+    
+    <vType id="car" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="ambulance" accel="3.0" decel="5.0" sigma="0" length="5" maxSpeed="20" vClass="emergency" color="1,0,0" />
+
+    <vType id="carBlue" vClass="passenger" color="0,0,1" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carWhite" vClass="passenger" color="1,1,1" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carYellow" vClass="passenger" color="1,1,0" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+    <vType id="carGreen" vClass="passenger" color="0,0.7,0" accel="2.6" decel="4.5" sigma="0" length="5" maxSpeed="13.9" />
+
+    <vType id="motorcycle" vClass="motorcycle" color="0,0,0" accel="3.0" decel="5.0" sigma="0" length="2.2" maxSpeed="12" />
+    <vType id="bus" vClass="bus" color="0,0.6,1" accel="1.2" decel="4.0" sigma="0" length="12" maxSpeed="11" />
+    <vType id="truck" vClass="truck" color="0.5,0.5,0.5" accel="1.3" decel="4.0" sigma="0" length="8" maxSpeed="10" />
+
+    
+    <route id="mainRoute" edges="E0 E1 E2 E9" />
+    <route id="reverseRoute" edges="-E9 -E2 -E1 -E0" />
+
+    <route id="verticalJ1Up" edges="-E3 E1 E2 E9" />
+    <route id="verticalJ1Down" edges="-E4 E1 E2 E9" />
+
+    <route id="verticalJ2Up" edges="-E5 E2 E9" />
+    <route id="verticalJ2Down" edges="-E6 E2 E9" />
+
+    <route id="verticalJ3Up" edges="-E7 E9" />
+    <route id="verticalJ3Down" edges="-E8 E9" />
+
+    <route id="j1StraightDown" edges="-E3 E4" />
+    <route id="j1StraightUp" edges="-E4 E3" />
+
+    <route id="j2StraightDown" edges="-E5 E6" />
+    <route id="j2StraightUp" edges="-E6 E5" />
+
+    <route id="j3StraightDown" edges="-E7 E8" />
+    <route id="j3StraightUp" edges="-E8 E7" />
+
+    
+    <flow id="heavy_forward" type="DEFAULT_VEHTYPE" route="mainRoute" begin="0" end="500" period="2" departLane="best" departSpeed="max" /><flow id="heavy_reverse" type="DEFAULT_VEHTYPE" route="reverseRoute" begin="0" end="500" period="2" departLane="best" departSpeed="max" /><vehicle id="ambulance_forward_test" type="ambulance" route="mainRoute" depart="10" /><vehicle id="ambulance_reverse_test" type="ambulance" route="reverseRoute" depart="70" /></routes>

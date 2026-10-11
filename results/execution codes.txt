@@ -1,0 +1,63 @@
+execution codes:
+
+IN CMD:
+1. Step 1 — Run the SUMO GUI
+
+"C:\Program Files (x86)\Eclipse\Sumo\bin\sumo-gui.exe" -c "C:\Ambulance_SUMO_Project\simulation\ambulance.sumocfg"
+
+or
+
+Open SUMO and open .sumocfg file
+
+-------------------------------------------
+2. Step 2 — Run the Python ambulance controller
+IN CMD:
+
+cd /d C:\Ambulance_SUMO_Project
+python python\ambulance_control.py
+
+===>Expected observations: ambulance detection messages, traffic-signal priority changes, and the ambulance progressing through the junctions. Exact console output depends on the contents of your current script.
+------------------------------------------------
+
+4. Execute your scenarios in order
+**Scenario 1 — Single ambulance
+
+IN CMD
+python python\ambulance_control.py
+
+Purpose: Check whether one ambulance can travel through the junctions while normal traffic is present.
+Record: ambulance departure time, arrival time, total travel time, and any waiting time your script measures.
+-------------------------------------------
+**Scenario 2 — Scenario controller
+
+IN CMD
+python python\ambulance_scenarios.py
+
+Purpose: Run the test cases implemented in this script. Check its code or console output to confirm exactly which scenarios it executes.
+Record: the scenario name, traffic conditions, ambulance travel time, and signal response.
+----------------------------------
+**Scenario 3 — Two ambulances
+
+python python\scenario3_two_ambulances.py
+
+Purpose: Test whether two ambulances can receive priority and pass through the three-junction corridor.
+Previously observed result: both ambulances traversed all three junctions with the test phase mapping. Run the script again to capture the current console output and verify that it still works with normal traffic enabled.
+-------------------------------------------------
+**Scenario 4 — Heavy traffic
+
+IN CMD:
+python python\scenario4_heavy_traffic.py
+
+Purpose: Evaluate ambulance travel under heavier traffic demand, with flows in both directions.
+Previously recorded result: see the results table below.
+----------------------------------------------------------------------
+
+5. Results recorded so far
+These are the previously recorded Scenario 4 results, not a fresh run after enabling all the traffic flows in your route file.
+Measurement	Forward ambulance	Reverse ambulance
+Departure time	10 s	70 s
+Arrival time	104 s	195 s
+Travel time	94 s	125 s
+Previously observed network load
+165 vehicles
+Peak reported during the earlier Scenario 4 run, around simulation time 181 s.
